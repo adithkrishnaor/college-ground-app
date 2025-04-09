@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 //import { API_KEY, AUTH_DOMAIN } from "../config";
-import Constants from "expo-constants";
 import { initializeApp } from "firebase/app";
+import Constants from "expo-constants";
 import { getAuth, initializeAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
@@ -10,8 +10,8 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: Constants.expoConfig?.extra?.firebaseApiKey,
-  authDomain: Constants.expoConfig?.extra?.firebaseAuthDomain,
+  apiKey: Constants.expoConfig.extra.apiKey,
+  authDomain: Constants.expoConfig.extra.authDomain,
   projectId: "college-ground-app-f6cc1",
   storageBucket: "college-ground-app-f6cc1.firebasestorage.app",
   messagingSenderId: "354834929396",

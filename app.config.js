@@ -2,8 +2,8 @@ export default ({ config }) => {
   return {
     ...config,
     extra: {
-      firebaseApiKey: process.env.FIREBASE_API_KEY,
-      firebaseAuthDomain: process.env.FIREBASE_AUTH_DOMAIN,
+      apiKey: process.env.API_KEY,
+      authDomain: process.env.AUTH_DOMAIN,
     },
   };
 };
