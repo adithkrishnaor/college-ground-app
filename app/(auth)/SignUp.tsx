@@ -1,5 +1,3 @@
-// app/screens/SignUp.tsx
-
 import React, { useState } from "react";
 import {
   View,
@@ -13,9 +11,7 @@ import {
 import { registerUser } from "../../config/auth";
 import { router } from "expo-router";
 
-type SignUpProps = {
-  // Add any props if needed
-};
+type SignUpProps = {};
 
 const SignUp: React.FC<SignUpProps> = () => {
   const [name, setName] = useState<string>("");
@@ -25,7 +21,6 @@ const SignUp: React.FC<SignUpProps> = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSignup = async () => {
-    // Form validation
     if (!name || !email || !password || !confirmPassword) {
       Alert.alert("Error", "Please fill in all fields");
       return;

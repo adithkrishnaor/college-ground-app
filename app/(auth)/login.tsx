@@ -1,5 +1,3 @@
-// app/login.tsx
-
 import React, { useState } from "react";
 import {
   View,
@@ -19,8 +17,6 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
-  // No longer need separate admin mode toggle - we'll check role after login
-
   const handleLogin = async () => {
     if (!email || !password) {
       Alert.alert("Error", "Please enter both email and password");
@@ -38,14 +34,11 @@ const Login: React.FC = () => {
       }
 
       if (user) {
-        // Check if user is admin
         const admin = await isUserAdmin(user.uid);
 
         if (admin) {
-          // Navigate to admin dashboard
           router.replace("/(adminTab)/adminDashboard");
         } else {
-          // Navigate to user dashboard
           router.replace("/(tabs)");
         }
       }

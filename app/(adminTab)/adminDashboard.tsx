@@ -8,7 +8,6 @@ import {
   Linking,
   ActivityIndicator,
   SafeAreaView,
-  StatusBar,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import DateTimePicker from "@react-native-community/datetimepicker";
@@ -22,8 +21,6 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 import { db } from "../../config/FirebaseConfig";
-import { router, Stack } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
 import * as Notifications from "expo-notifications";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 

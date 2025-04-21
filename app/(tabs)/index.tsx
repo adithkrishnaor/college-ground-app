@@ -15,7 +15,6 @@ import { useRouter } from "expo-router";
 export default function CollegeGroundScreen() {
   const router = useRouter();
 
-  // Single ground data
   const ground = {
     id: 1,
     name: "FISAT COLLEGE GROUND",
@@ -27,13 +26,11 @@ export default function CollegeGroundScreen() {
     facilities: ["Football", "Cricket"],
   };
 
-  // Function to open maps with directions
   const openDirections = () => {
     const { latitude, longitude } = ground.coordinates;
     const destination = `${latitude},${longitude}`;
     const label = encodeURIComponent(ground.name);
 
-    // Different URL schemes for iOS and Android
     const url = Platform.select({
       ios: `maps:?q=${label}&ll=${destination}`,
       android: `geo:0,0?q=${destination}(${label})`,
@@ -52,7 +49,6 @@ export default function CollegeGroundScreen() {
     });
   };
 
-  // Function to handle the book now button press
   const handleBookNowPress = () => {
     router.push("/(tabs)/menu");
   };

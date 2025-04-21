@@ -26,7 +26,7 @@ export default function MenuPage() {
         "Book cricket grounds and organize matches with other teams.",
       icon: "cricket" as const,
       route: "/screens/cricketBooking" as const,
-      color: "#2ecc71", // Green for cricket
+      color: "#2ecc71",
     },
     {
       id: "football",
@@ -35,7 +35,7 @@ export default function MenuPage() {
         "Reserve football grounds and set up matches with other teams.",
       icon: "soccer" as const,
       route: "/screens/footballBooking" as const,
-      color: "#3498db", // Blue for football
+      color: "#3498db",
     },
   ];
 
@@ -89,7 +89,6 @@ export default function MenuPage() {
           </TouchableOpacity>
         ))}
 
-        {/* Add extra space at bottom for tab bar */}
         <View style={{ height: 70 }} />
       </ScrollView>
     </SafeAreaView>

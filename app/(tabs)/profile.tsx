@@ -20,8 +20,6 @@ import { FontAwesome5 } from "@expo/vector-icons";
 export default function ProfileScreen() {
   const router = useRouter();
   const colorScheme = useColorScheme();
-  // Force light mode for white theme
-  const isDark = false; // Previously: colorScheme === "dark"
   const tintColor = Colors[colorScheme ?? "light"].tint;
 
   const [userName, setUserName] = useState("");
@@ -32,7 +30,6 @@ export default function ProfileScreen() {
     // Get current user info
     const user = auth.currentUser;
     if (user) {
-      // Fixed username display - get full name or email username if displayName is null
       const displayName =
         user.displayName || user.email?.split("@")[0] || "User";
       setUserName(displayName);
@@ -58,12 +55,7 @@ export default function ProfileScreen() {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <ScrollView
-        style={[
-          styles.container,
-          { backgroundColor: "#f8f8f8" }, // Always light background
-        ]}
-      >
+      <ScrollView style={[styles.container, { backgroundColor: "#f8f8f8" }]}>
         <View style={styles.header}>
           <View
             style={[styles.avatarContainer, { backgroundColor: tintColor }]}
